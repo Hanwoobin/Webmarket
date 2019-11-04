@@ -1,9 +1,6 @@
 <%@ page contentType ="text/html; charset=utf-8" %><%-- 유니코드 : 각자의 OS에 맞게 언어가 지원됨 --%>
 <%@ page import ="java.util.Date" %>
 <%@ page import = "java.util.ArrayList"%>
-<%@ page import = "dto.Product"%>
-<%@ page import="dao.ProductRepository"%>
-<jsp:useBean id ="productDAO" class = "dao.ProductRepository" scope="session"/>
 <html>
 <head>
 <link rel="stylesheet" <%--페이지 스타일 --%>

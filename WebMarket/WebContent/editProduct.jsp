@@ -36,7 +36,7 @@
 				while (rs.next()){
 			%>
 			<div class = "col-sm-4">
-				<img src = "C:\upload/<%=rs.getString("p_fileName") %>"style = "width: 100%">
+				<img src="resources/images/<%=rs.getString("p_fileName")%>"style="width: 100px" />
 				<h3><%=rs.getString("p_name")%></h3>
 				<p><%=rs.getString("p_description") %>
 				<p><%=rs.getString("p_unitPrice") %>

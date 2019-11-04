@@ -1,28 +1,31 @@
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html; charset=utf-8"%>
 <%@page import ="java.sql.*"%>
 <html>
 <head>
-<link rel = "stylesheet" href = "../resoures/css/bootstrap.min.css"/>
-<title>상품 수정</title>
+<link rel = "stylesheet" href ="../resources/css/bootstrap.min.css"	/>
+<title>회원 수정</title>
+
 </head>
 <body>
 	<jsp:include page="../menu.jsp" />
 	<div class = "jumbotron">
 		<div class = "jumbotron">
 			<div class = "container">
-				<h1 class = "display-3">상품 수정</h1>
+				<h1 class = "display-3">회원 수정</h1>
 			</div>
 		</div>
 		<%@include file = "../dbconn.jsp" %>
 		<%
+
 			String id = request.getParameter("id");
+			String passwd = request.getParameter("password");
 			
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
-			
-			String sql = "select * from member where p_id = ?";
+			String sql = "select * from member where id = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, id);
+			pstmt.setString(1, (String)session.getAttribute("sessionId"));
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 			
@@ -34,14 +37,14 @@
 						<div class = "form-group row">
 							<label class = "col-sm-2">아이디 : </label>
 							<div class = "col-sm-3">
-								<input type = "text" name = "name" class = "form-control" value = '<%=rs.getString("id") %>'/>
+								<input type = "text" name = "name" class = "form-control" value = '<%=rs.getString("id") %>' disabled/>
 								
 							</div>
 						</div>
 						<div class = "form-group row">
 							<label class = "col-sm-2">비밀번호 : </label>
 							<div class = "col-sm-3">
-								<input type = "text" id="name" name = "name" class = "form-control" value ="<%=rs.getString("password")%>">
+								<input type = "text" id="name" name = "name" class = "form-control" value ="<%=rs.getString("password")%>"disabled>
 							</div>
 						</div>
 						<div class = "form-group row">
@@ -51,46 +54,36 @@
 							</div>
 						</div>
 						<div class = "form-group row">
-							<label class = "col-sm-2">상세 설명</label>
+							<label class = "col-sm-2">성별</label>
 							<div class = "col-sm-5">
-								<textarea name = "description" rows="2" cols="50" class = "form-control"><%=rs.getString("p_description") %></textarea>
+								<input type = "text" name = "gender" class = "form-control" value = "<%=rs.getString("gender") %>">
 							</div>
 						</div>
 						<div class = "form-group row">
-							<label class = "col-sm-2">제조사</label>
+							<label class = "col-sm-2">생일</label>
 							<div class = "col-sm-3">
-								<input type = "text" name ="manufacturer" class = "form-control" value="<%=rs.getString("p_manufacturer")%>"/>
+								<input type = "text" name ="brith" class = "form-control" value="<%=rs.getString("birth")%>"/>
 							</div>
 						</div>
 						<div class = "form-group row">
-							<label class = "col-sm-2">분류</label>
+							<label class = "col-sm-2">이메일 : </label>
 							<div class = "col-sm-3">
-								<input type = "text" name = "category" class= "form-control" value = "<%=rs.getString("p_category")%>">
+								<input type = "text" name = "mail" class= "form-control" value = "<%=rs.getString("mail")%>">
 							</div>
 						</div>
 						<div class = "form-group row">
-							<label class = "col-sm-2">재고 수</label>
+							<label class = "col-sm-2">전화번호</label>
 							<div class = "col-sm-3">
-								<input type = "text" id ="unitsInStock" name = "unitsInStock" class = "form-control" value ="<%=rs.getLong("p_unitsInStock")%>">
+								<input type = "text" name = "phone" class = "form-control" value ="<%=rs.getString("phone")%>">
 							</div>
 						</div>
 						<div class = "form-group row">
-							<label class = "col-sm-2">상태</label>
-							<div class = "col-sm-5">
-								<input type = "radio" name = "condition" value = "New">
-								신규제품
-								<input type = "radio" name ="condition" value = "old">
-								중고제품
-								<input type = "radio" name = "condition" value = "Refurbished">
-								재생제품
+							<label class = "col-sm-2">주소</label>
+							<div class = "col-sm-3">
+								<input type = "text" name = "address" class = "form-control" value ="<%=rs.getString("address")%>">
 							</div>
 						</div>
-						<div class = "form-group row">
-							<label class = "col-sm-2">이미지</label>
-							<div class = "col-sm-5">
-								<input type = "file" name = "productImage" class = "form-control">
-							</div>
-						</div>
+
 						<div class = "form-group">
 							<input type = "submit" class = "btn btn-primary" value = "등록">
 						</div>

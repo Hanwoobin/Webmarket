@@ -2,7 +2,7 @@
 <%@page import ="java.sql.*"%>
 <html>
 <head>
-<link rel = "stylesheet" href = "./resoures/css/bootstrap.min.css"/>
+<link rel = "stylesheet" href ="./resources/css/bootstrap.min.css"	/>
 <title>상품 수정</title>
 </head>
 <body>
@@ -30,7 +30,7 @@
 		<div class = "container">
 			<div class = "row">
 				<div class = "col-sm-5">
-					<img src ="c:/upload/<%=rs.getString("p_filename")%>" alt = "image" style = "width: 100%"/>
+					<img src="resources/images/<%=rs.getString("p_fileName")%>"style="width: 400px"height="500px"/>
 				</div>
 				<div class ="col-sm-7">
 					<form name ="newProduct" action ="./processUpdateProduct.jsp"

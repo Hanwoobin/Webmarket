@@ -36,5 +36,5 @@
 	if(conn != null)
 		conn.close();
   // out.print(session.getAttribute("sessionId"));
-  response.sendRedirect("../welcome.jsp");
+  response.sendRedirect("welcome.jsp");
 %>

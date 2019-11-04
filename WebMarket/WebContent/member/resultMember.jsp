@@ -38,11 +38,9 @@
 				<p><b>전화번호</b> : <%=rs.getString("phone") %> </p>
 				<h4>만든 날짜 : <%=rs.getString("regist_day")%></h4>
 			
-				<%-- <form name = "addForm" action ="./addCart.jsp?id=<%=rs.getString("p_id")%>"method = "post">
-					<p><a href="#" class="btn btn-info" onclick="addToCart()"> 상품 주문 &raquo;</a> 
-					<a href ="./cart.jsp" class ="btn btn-warning"> 장바구니  &raquo;</a>
-					<a href="./products.jsp" class="btn btn-secondary"> 상품 목록 &raquo;</a>
-				</form> --%>
+				 <form name = "addForm" action ="./addCart.jsp?id=<%=rs.getString("id")%>"method = "post">
+					
+				</form> 
 			</div>
 		</div>
 		<%
