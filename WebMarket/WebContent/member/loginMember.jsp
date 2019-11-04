@@ -25,11 +25,11 @@
 			<form class="form-signin" action="processLoginMember.jsp" method="post">
 				<div class="form-group">
 					<label class="sr-only"> id </label>
-					<input type="text" class="form-control" placeholder="ID" name='id' required autofocus>
+					<input type="text" class="form-control" placeholder="ID" name="id" required autofocus>
 				</div>
 				<div class="form-group">
 					<label class="sr-only"> Password </label> 
-					<input	type="password" class="form-control" placeholder="Password" name='password' required>
+					<input	type="password" class="form-control" placeholder="Password" name="password">
 				</div>
 				<button class="btn btn btn-lg btn-success btn-block" type="submit">로그인</button>
 			</form>

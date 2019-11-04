@@ -15,14 +15,14 @@
 		</div>
 		<%@include file = "../dbconn.jsp" %>
 		<%
-			String productId = request.getParameter("id");
+			String id = request.getParameter("id");
 			
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
 			
 			String sql = "select * from member where p_id = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, productId);
+			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 			

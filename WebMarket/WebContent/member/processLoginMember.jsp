@@ -7,31 +7,27 @@
 <%
 	Date now = new Date();
 	SimpleDateFormat sf = new SimpleDateFormat("yyyy.MM.dd a hh:mm");
-
 	String today = sf.format(now);
-
    request.setCharacterEncoding("UTF-8");
   
    String id = request.getParameter("id");
    String password = request.getParameter("password");
+   
 
-   
-   
-   
   
  	ResultSet rs = null;
 	PreparedStatement pstmt = null;
-	String sql = "select * from member where id = ?";
+	String sql = "select * from member where id= ? and password=?";
 	pstmt = conn.prepareStatement(sql);
 	pstmt.setString(1, id);
+	pstmt.setString(2, password);
 	rs = pstmt.executeQuery();
-
-
-	while(rs.next()) {
-		if(rs.getString("id") == id && rs.getString("password") == password){
-			session.setAttribute("sessionId", rs.getString("id"));
-		}
+	
+	while (rs.next()) {
+		session.setAttribute("sessionId", id);
+		
 	}
+	
 	
 	if (rs != null) 
 		rs.close();
@@ -39,7 +35,6 @@
 		pstmt.close();
 	if(conn != null)
 		conn.close();
-	
-   
-   response.sendRedirect("../welcome.jsp");
+   out.print(session.getAttribute("sessionId"));
+  response.sendRedirect("../welcome.jsp");
 %>
