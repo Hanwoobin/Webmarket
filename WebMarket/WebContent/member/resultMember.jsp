@@ -17,11 +17,13 @@
 	<%@include file ="../dbconn.jsp" %>
 	<%
 		String id = request.getParameter("id");
+		String passwd = request.getParameter("password");
+	
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "Select * from member where id= ?";
+		String sql = "select * from member where id = ?";
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, id);
+		pstmt.setString(1, (String)session.getAttribute("sessionId"));
 		rs = pstmt.executeQuery();
 		while(rs.next()){
 		
