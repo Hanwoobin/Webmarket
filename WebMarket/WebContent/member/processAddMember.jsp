@@ -49,5 +49,5 @@
 		pstmt.close();
 	
    
-   response.sendRedirect("resultMember.jsp?id="+id);
+   response.sendRedirect("add_resultMember.jsp?id="+id);
 %>

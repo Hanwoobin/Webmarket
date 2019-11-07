@@ -38,7 +38,7 @@
 						<div class = "form-group row">
 							<label class = "col-sm-2">상품 코드</label>
 							<div class = "col-sm-3">
-								<input type = "text" id = "productId" name = "productId" class = "form-control" value = '<%=rs.getString("p_id") %>'/>
+								<input type = "text" id = "productId" name = "productId" class = "form-control" value = '<%=rs.getString("p_id") %>' disabled>
 								
 							</div>
 						</div>

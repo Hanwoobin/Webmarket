@@ -11,7 +11,7 @@
 
 
    String filename="";
-   String realFolder = "./resources/images";
+   String realFolder = "c\\upload";
    int maxSize = 5 * 1024 * 1024;
    String encType = "utf-8";
    

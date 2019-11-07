@@ -7,7 +7,7 @@
 	
 	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="./welcome.jsp">Home</a>
+			<div class = "nav-band"><a class = "nav-link" href = "<c:url value ="/welcome.jsp"/>">HOME</a></div>
 		</div>
 		<div>
 		<ul class = "navbar-nav mr-auto">
@@ -18,7 +18,7 @@
 					
 				</c:when>
 				<c:otherwise>
-				<li style = "padding-top: 7px; color: white">[<%=sessionId%>님]</li>
+				<li style = "padding-top: 7px; color: black">[<%=sessionId%>님]</li>
 				<li class = "nav-item"><a class = "nav-link" href = "<c:url value = "/member/logoutMember.jsp"/>">로그아웃</a></li>
 				<li class = "nav-item"><a class = "nav-link" href = "<c:url value = "/member/updateMember.jsp"/>">회원수정</a></li>
 				<li class = "nav-item"><a class = "nav-link" href = "<c:url value = "/member/resultMember.jsp"/>">회원정보</a></li>

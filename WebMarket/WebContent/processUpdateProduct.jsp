@@ -6,7 +6,7 @@
 <%@include file = "dbconn.jsp" %>
 <%
 	String filename="";
-	String realFolder = "C:\\upload";
+	String realFolder = "c\\upload";
 	String encType = "utf-8";
 	int maxSize = 5 * 1024 * 1024;
 	
@@ -61,7 +61,6 @@
 			pstmt.executeUpdate();
 		}else {
 			sql = "UPDATE product SET p_name=?, p_unitPrice=?, p_description=?, p_manufacturer=?, p_category=?, p_unitsInStock=?, p_condition=? WHERE p_id=?";
-			pstmt = conn.prepareStatement(sql);
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1,name);
 			pstmt.setInt(2,price);
