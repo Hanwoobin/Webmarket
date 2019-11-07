@@ -35,7 +35,7 @@
 	}
 	if(session.getAttribute("sessionId")== null) {
 		request.setAttribute("sessionId","아이디 또는 비밀번호가 일치하지 않습니다");
-		msg = "loginMember.jsp";
+		msg = "loginMember.jsp?error=1";
 	}
 	
 	

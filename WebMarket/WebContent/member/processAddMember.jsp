@@ -9,7 +9,7 @@
 
 <%
 	Date now = new Date();
-	SimpleDateFormat sf = new SimpleDateFormat("yyyy.MM.dd a hh:mm");
+	SimpleDateFormat sf = new SimpleDateFormat("yyyy.MM.dd hh:mm");
 
 	String today = sf.format(now);
 
@@ -23,8 +23,6 @@
    String brith = request.getParameter("birth");
    String mail = request.getParameter("mail");
    String address = request.getParameter("address");
-   
-   
    
   
    

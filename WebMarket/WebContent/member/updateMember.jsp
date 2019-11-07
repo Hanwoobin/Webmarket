@@ -55,26 +55,26 @@
 						</div>
 						<div class = "form-group row">
 							<label class = "col-sm-2">성별</label>
-							<div class = "col-sm-5">
+							<div class = "col-sm-3">
 								<input type = "text" name = "gender" class = "form-control" value = "<%=rs.getString("gender") %>">
 							</div>
 						</div>
 						<div class = "form-group row">
 							<label class = "col-sm-2">생일</label>
-							<div class = "col-sm-3">
-								<input type = "text" name ="brith" class = "form-control" value="<%=rs.getString("birth")%>"/>
+							<div class = "col-sm-5">
+								<input type = "date" name ="brith" class = "form-control" value="<%=rs.getString("birth")%>"/>
 							</div>
 						</div>
 						<div class = "form-group row">
 							<label class = "col-sm-2">이메일 : </label>
 							<div class = "col-sm-3">
-								<input type = "text" name = "mail" class= "form-control" value = "<%=rs.getString("mail")%>">
+								<input type = "email" name = "mail" class= "form-control" value = "<%=rs.getString("mail")%>">
 							</div>
 						</div>
 						<div class = "form-group row">
 							<label class = "col-sm-2">전화번호</label>
 							<div class = "col-sm-3">
-								<input type = "text" name = "phone" class = "form-control" value ="<%=rs.getString("phone")%>">
+								<input type = "tel" name = "phone" class = "form-control" value ="<%=rs.getString("phone")%>">
 							</div>
 						</div>
 						<div class = "form-group row">

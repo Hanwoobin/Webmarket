@@ -1,4 +1,5 @@
 package dto;
+
 import java.io.Serializable;
 
 
@@ -10,7 +11,6 @@ public class Product implements Serializable {
 	private Integer unitPrice;
 	private String description;
 	private String manufacturer;
-	
 	private String category;
 	private long unitInStock;
 	private String condition;

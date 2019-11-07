@@ -40,9 +40,6 @@
 				<p><b>전화번호</b> : <%=rs.getString("phone") %> </p>
 				<h4>만든 날짜 : <%=rs.getString("regist_day")%></h4>
 			
-				 <form name = "addForm" action ="./addCart.jsp?id=<%=rs.getString("id")%>"method = "post">
-					
-				</form> 
 			</div>
 		</div>
 		<%
