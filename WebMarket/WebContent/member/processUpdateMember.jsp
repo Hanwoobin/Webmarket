@@ -5,6 +5,7 @@
 <%@page import = "java.sql.*"%>
 <%@include file = "../dbconn.jsp" %>
 <%
+request.setCharacterEncoding("UTF-8");
 	String id = request.getParameter("id");
 	String password = request.getParameter("password");
 	String name = request.getParameter("name");

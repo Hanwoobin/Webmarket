@@ -26,8 +26,7 @@
 		}
 	}
 	
-	ArrayList<Product> list = (ArrayList<Product>) session.
-			getAttribute("cartlist");
+	ArrayList<Product> list = (ArrayList<Product>)session.getAttribute("cartlist");
 	if(list == null) {
 		list = new ArrayList<Product>();
 		session.setAttribute("cartlist", list);

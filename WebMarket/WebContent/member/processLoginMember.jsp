@@ -5,15 +5,10 @@
 <%@ include file ="../dbconn.jsp" %>
 
 <%
-	Date now = new Date();
-	SimpleDateFormat sf = new SimpleDateFormat("yyyy.MM.dd hh:mm");
-	String today = sf.format(now);
-   request.setCharacterEncoding("UTF-8");
-  
+
    String id = request.getParameter("id");
    String password = request.getParameter("password");
    
-
   
  	ResultSet rs = null;
 	PreparedStatement pstmt = null;
@@ -24,14 +19,12 @@
 	rs = pstmt.executeQuery();
 	String msg = "";
 	while (rs.next()) {
-		
+		String name = rs.getString("name");
 		session.setAttribute("sessionId", id);
-		
+		session.setAttribute("sessionName",name);
 		if(session.getAttribute("sessionId")!=null) {
-			msg = "../welcome.jsp";
-			
+			msg = "../welcome.jsp";	
 		}
-		
 	}
 	if(session.getAttribute("sessionId")== null) {
 		request.setAttribute("sessionId","아이디 또는 비밀번호가 일치하지 않습니다");

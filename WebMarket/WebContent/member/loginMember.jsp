@@ -18,7 +18,7 @@
 				String error = request.getParameter("error");
 				if (error != null) {
 					out.println("<div class='alert alert-danger'>");
-					out.println("아이디와 비밀번호를 확인해 주세요");
+					out.println("가입하지 않은 아이디이거나, 잘못된 비밀번호입니다.");
 					out.println("</div>");
 				}
 			%>

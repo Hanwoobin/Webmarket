@@ -12,40 +12,42 @@
 	SimpleDateFormat sf = new SimpleDateFormat("yyyy.MM.dd hh:mm");
 
 	String today = sf.format(now);
-
+	boolean passwordCheck = true;
    request.setCharacterEncoding("UTF-8");
   
    String id = request.getParameter("id");
    String name = request.getParameter("name");
    String password = request.getParameter("password");
+   String password_check = request.getParameter("password_check");
    String phone = request.getParameter("phone");
    String gender = request.getParameter("gender");
    String brith = request.getParameter("birth");
    String mail = request.getParameter("mail");
    String address = request.getParameter("address");
+   PreparedStatement pstmt = null;
    
-  
+   if(password_check.equals(password) == false) {
+	   passwordCheck = false;
+   }
    
-	PreparedStatement pstmt = null;
-	String sql = "insert into member values(?,?,?,?,?,?,?,?,?)";
-	pstmt = conn.prepareStatement(sql);
-	pstmt.setString(1,id);
-	pstmt.setString(2,password);
-	pstmt.setString(3,name);
-	pstmt.setString(4, gender);
-	pstmt.setString(5, brith);
-	pstmt.setString(6, mail);
-	pstmt.setString(7, phone);
-	pstmt.setString(8, address);
-	pstmt.setString(9, today);
-
-	pstmt.executeUpdate();
-	
-	if(pstmt != null)
+   if(passwordCheck){
+		String sql = "insert into member values(?,?,?,?,?,?,?,?,?)";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1,id);
+		pstmt.setString(2,password);
+		pstmt.setString(3,name);
+		pstmt.setString(4, gender);
+		pstmt.setString(5, brith);
+		pstmt.setString(6, mail);
+		pstmt.setString(7, phone);
+		pstmt.setString(8, address);
+		pstmt.setString(9, today);
+		pstmt.executeUpdate();
+	   response.sendRedirect("add_resultMember.jsp?id="+id);
+   }else{
+	   response.sendRedirect("addMember.jsp?error=1");
+   }
+   if(pstmt != null)
 		pstmt.close();
-	if(conn != null) 
-		pstmt.close();
 	
-   
-   response.sendRedirect("add_resultMember.jsp?id="+id);
 %>

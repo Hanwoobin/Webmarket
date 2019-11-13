@@ -15,15 +15,36 @@
 	<div class ="container">
 			<form name="member" action ="./processAddMember.jsp" class ="form-horizontal" method="post">
 			<div class="form-group row">
-				<label class="col-sm-2">id :</label>
+				<label class="col-sm-2">아이디 :</label>
 				<div class="col-sm-3">
 					<input type="text" name="id"  class="form-control" >
 				</div>
 			</div>
 			<div class="form-group row">
-				<label class="col-sm-2">password :</label>
+				<label class="col-sm-2">비밀번호 :</label>
 				<div class="col-sm-3">
 					<input type="password" name="password"  class="form-control" >
+					<%
+				String error = request.getParameter("error");
+				if (error != null) {
+					out.println("<div class='alert alert-danger'>");
+					out.println("비밀번호가 맞지않습니다.");
+					out.println("</div>");
+				}
+			%>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-sm-2">비밀번호 확인 :</label>
+				<div class="col-sm-3">
+					<input type="password" name="password_check"  class="form-control" >
+					<%
+				if (error != null) {
+					out.println("<div class='alert alert-danger'>");
+					out.println("비밀번호가 맞지않습니다.");
+					out.println("</div>");
+				}
+			%>
 				</div>
 			</div>
 			<div class="form-group row">
