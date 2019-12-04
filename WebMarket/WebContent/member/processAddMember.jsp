@@ -25,6 +25,9 @@
    String mail = request.getParameter("mail");
    String address = request.getParameter("address");
    PreparedStatement pstmt = null;
+  //PreparedStatement 객체는 SQL 문장이 미리 컴파일되고, 실행시간동안 인수 값을 위한 공간을 확보할 수 있다는 점
+
+ 
    
    if(password_check.equals(password) == false) {
 	   passwordCheck = false;

@@ -21,6 +21,10 @@
 	
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+		/*SQL 문 중에서 Select 문을 사용한 질의의 경우 성공 시 결과물로 ResultSet을 반환한다
+
+출처: https://hyeonstorage.tistory.com/111 [개발이 하고 싶어요]
+		*/
 		String sql = "select * from member where id = ?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, id);

@@ -7,8 +7,6 @@
 
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-	
-		
 		
 		String sql = "select * from member";
 		pstmt = conn.prepareStatement(sql);

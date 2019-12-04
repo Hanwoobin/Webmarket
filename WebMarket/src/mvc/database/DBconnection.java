@@ -10,7 +10,8 @@ public class DBconnection {
 	public static Connection getConnection() throws SQLException, ClassNotFoundException {
 		Connection conn = null;
 
-		String url = "jdbc:mysql://localhost:3306/WebMarketDB";
+		String url = "jdbc:mysql://localhost:3306/WebMarketDB?useSSL=false";
+		//ssl을 사용하지않겠다
 		String user = "root";
 		String password = "1234";
 
