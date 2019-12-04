@@ -90,7 +90,7 @@ public class BoardDAO {
 				
 				if(index < (start+limt)&&index <= total_record)
 					index++;
-				else 
+				else
 					break;
 			}
 			return list;
@@ -110,6 +110,6 @@ public class BoardDAO {
 		}
 		return null;
 	}
-	//
+	//ddd
 	
 }
