@@ -42,7 +42,7 @@
 	</filter-mapping>
 	<servlet>
 		<servlet-name>BoardController</servlet-name>
-			<servlet-class>mvc.controller.BoardCpntroller</servlet-class>
+			<servlet-class>mvc.controller.BoardController</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>

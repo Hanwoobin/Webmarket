@@ -12,9 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-import com.sun.net.httpserver.Authenticator.Result;
 
-import mvc.database.DBconnection;
 import mvc.model.BoardDAO;
 import mvc.model.BoardDTO;
 
@@ -42,6 +40,7 @@ public class BoardController extends HttpServlet {
 	}
 	
 	public void requestBoardList(HttpServletRequest request) {
+		requestBoardList(request);
 		
 	}
 }

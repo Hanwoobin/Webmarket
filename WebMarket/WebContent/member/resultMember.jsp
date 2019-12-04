@@ -31,7 +31,7 @@
 		<div class="row">
 			<div class="col-md-6">
 				<h3>아이디 :<%=rs.getString("id")%></h3>
-				<p>패스워드 : <%=rs.getString("password")%>
+				<p>패스워드 : ****
 				<p><b>이름 : </b><span class="badge badge-danger"> <%=rs.getString("name")%></span>
 				<p><b>성별</b> : <%=rs.getString("gender")%>
 				<p><b>메일</b> : <%=rs.getString("mail")%>

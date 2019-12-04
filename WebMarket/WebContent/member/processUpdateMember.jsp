@@ -27,15 +27,16 @@ request.setCharacterEncoding("UTF-8");
 	rs = pstmt.executeQuery();
 	
 	if(rs.next()) {
-		sql = "UPDATE member SET name=?, gender=?, birth=?, mail=?, phone=?, address=? WHERE id=?";
+		sql = "UPDATE member SET name=?, gender=?, birth=?, mail=?, phone=?, address=?,password=? WHERE id=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, name);
-		pstmt.setString(2,gender);
-		pstmt.setString(3,brith);
+		pstmt.setString(2, gender);
+		pstmt.setString(3, brith);
 		pstmt.setString(4, mail);
 		pstmt.setString(5, phone);
 		pstmt.setString(6, address);
-		pstmt.setString(7, SessionId);
+		pstmt.setString(7, password);
+		pstmt.setString(8, SessionId);
 		pstmt.executeUpdate();
 	}else {
 		out.println("아이디나 비밀번호를 다시 입력해주세요");

@@ -17,10 +17,6 @@
 		</div>
 		<%@include file = "../dbconn.jsp" %>
 		<%
-
-			String id = request.getParameter("id");
-			String passwd = request.getParameter("password");
-			
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
 			String sql = "select * from member where id = ?";
@@ -44,7 +40,7 @@
 						<div class = "form-group row">
 							<label class = "col-sm-2">비밀번호 : </label>
 							<div class = "col-sm-3">
-								<input type = "text" id="name" name = "name" class = "form-control" value ="<%=rs.getString("password")%>"disabled>
+								<input type = "password"  name = "password" class = "form-control" value ="<%=rs.getString("password")%>">
 							</div>
 						</div>
 						<div class = "form-group row">

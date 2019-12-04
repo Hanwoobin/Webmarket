@@ -2,6 +2,7 @@
 <%
 
 	session.removeAttribute("sessionId");
+	session.invalidate();
 
 response.sendRedirect("../welcome.jsp");
 %>

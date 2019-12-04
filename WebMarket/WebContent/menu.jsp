@@ -2,6 +2,7 @@
 <%@taglib prefix = "c" uri ="http://java.sun.com/jsp/jstl/core"%>
 <%
 	String sessionName = (String)session.getAttribute("sessionName");
+	
 %>
 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
 	
