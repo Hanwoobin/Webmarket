@@ -22,8 +22,9 @@
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		/*SQL 문 중에서 Select 문을 사용한 질의의 경우 성공 시 결과물로 ResultSet을 반환한다
+			ResultSet 객체는 '커서(cursor)' 라고 불리는 것을 가지고 있는데 커서는 초기에 첫 번째 행의 직전을 가리키도록 되어 있는데, ResultSet 객체의 next() 메소드를 사용하면 다음 위치로 커서를 옮길 수 있다.
 
-출처: https://hyeonstorage.tistory.com/111 [개발이 하고 싶어요]
+		
 		*/
 		String sql = "select * from member where id = ?";
 		pstmt = conn.prepareStatement(sql);
